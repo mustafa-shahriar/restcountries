@@ -3,8 +3,8 @@ let sx = 0;
 let sy = 0;
 const countries = document.querySelector(".countries");
 fetch("https://restcountries.com/v3.1/all")
-    .then((Blob) => Blob.json())
-    .then((data) => {
+    .then(Blob => Blob.json())
+    .then(data => {
         array.push(...data);
         render(array);
     });
@@ -13,7 +13,7 @@ function render(arr) {
     arr.sort((a, b) => a.name.common.localeCompare(b.name.common));
     let html = ``;
 
-    arr.forEach((element) => {
+    arr.forEach(element => {
         let value = element.name.official.includes("'")
             ? element.name.common
             : element.name.official;
@@ -45,7 +45,7 @@ search.addEventListener("keyup", displayChanges);
 
 function displayChanges() {
     const regex = new RegExp(this.value, "gi");
-    const filterArr = array.filter((element) => {
+    const filterArr = array.filter(element => {
         const name = element.name.common;
         return name.match(regex);
     });
@@ -67,16 +67,20 @@ function changeBigBanner(name) {
         0;
     document.querySelector("main").style.display = "none";
     fetch(`https://restcountries.com/v3.1/name/${name}?fullText=true`)
-        .then((blob) => blob.json())
-        .then((data) => {
+        .then(blob => blob.json())
+        .then(data => {
             changeDomForBB(data);
         });
 }
 
 function changeDomForBB(arr) {
+    let region = arr[0].region;
     let border = arr[0].borders
         ? arr[0].borders
-              .map((ele) => `<div class="border">${ele}</div>`)
+              .map(
+                  ele =>
+                      `<div class="border" onclick="chaFromList('${ele}','${region}')">${ele}</div>`
+              )
               .join("")
         : `<div class="mt">${arr[0].name.common} don't share border with any other country</div>`;
 
@@ -149,4 +153,9 @@ function back() {
     document.querySelector(".details").style.display = "none";
     window.scrollTo(sx, sy);
     document.querySelector("head title").innerHTML = "Country";
+}
+
+function chaFromList(name,region) {
+    console.log(name);
+    console.log(region);
 }
