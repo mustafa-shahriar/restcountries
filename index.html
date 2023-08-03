@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Country</title>
+        <link rel="stylesheet" href="index.css" />
+        <script src="index.js" defer></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- ============================ -->
+            <!--           HEADER             -->
+            <!-- ============================ -->
+            <header>
+                <div class="container">
+                    <p class="where">Where in the world?</p>
+                    <div class="mode">
+                        <img src="images/light.svg" alt="" />
+                        <p class="mode-text">Dark Mode</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- ============================ -->
+            <!--           MAIN             -->
+            <!-- ============================ -->
+            <main>
+                <div class="container">
+                    <div class="filter">
+                        <div class="search">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="1em"
+                                viewBox="0 0 512 512"
+                            >
+                                <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+                                />
+                            </svg>
+                            <input
+                                type="text"
+                                placeholder="Search for a Country...."
+                            />
+                        </div>
+                        <div class="select">
+                            <select name="region" id="lang">
+                                <option value="select">Filter by Region</option>
+                                <option value="javascript">Africa</option>
+                                <option value="php">America</option>
+                                <option value="java">Asia</option>
+                                <option value="golang">Europe</option>
+                                <option value="python">Oceania</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="countries">
+                        <!-- <div class="country">
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png"
+                                alt="The flag of the Islamic Emirate of Afghanistan has a white field with Arabic inscriptions — the Shahada — in black across its center."
+                            />
+                            <div class="country-text">
+                                <h3>Afghanistan</h3>
+                                <p>Population: <span>20685454</span></p>
+                                <p>Region: <span>Asia</span></p>
+                                <p>Capital: <span>Kabul</span></p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

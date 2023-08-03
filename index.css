@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,800&display=swap");
+
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans";
+}
+:root {
+    --bg-color: hsl(0, 0%, 98%);
+    --h-bg: hsl(0, 0%, 100%);
+    --text: hsl(200, 15%, 8%);
+    --input: hsl(0, 0%, 52%);
+    --shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+/* body {
+    background: var(--bg-color);
+    width: 100vw;
+    min-height: 100vh;
+} */
+.wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+/* =========================== */
+/*          HEADER              */
+/* =========================== */
+
+header {
+    padding: 1rem;
+    background-color: var(--h-bg);
+    box-shadow: var(--shadow);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.where {
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+.mode {
+    display: flex;
+    gap: 0.5rem;
+}
+.mode-text {
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+/* =========================== */
+/*             MAIN            */
+/* =========================== */
+
+main {
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 1rem;
+}
+
+.filter {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-block: 0.5rem;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--h-bg);
+    box-shadow: var(--shadow);
+    padding: 0.7rem;
+    border-radius: 0.2rem;
+    width: min(90vw, 350px);
+}
+
+.search input {
+    outline: none;
+}
+
+.select {
+    background-color: var(--h-bg);
+    box-shadow: var(--shadow);
+    padding: 0.7rem;
+    border-radius: 0.2rem;
+    outline: none;
+}
+
+.countries {
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+}
+.country {
+    width: 280px;
+    height: 320px;
+    background-color: var(--h-bg);
+    box-shadow: var(--shadow);
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    transition: transform 200ms ease-in-out;
+}
+
+.country img {
+    width: 100%;
+    height: 50%;
+}
+.country:hover {
+    transform: translateY(-0.2rem);
+}
+
+.country-text {
+    padding: 1.5rem 1rem;
+}
+
+.country-text > *:first-child {
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.country-text > p {
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+.country-text p span {
+    color: var(--input);
+}
