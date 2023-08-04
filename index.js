@@ -3,16 +3,14 @@ let sx = 0;
 let sy = 0;
 const countries = document.querySelector(".countries");
 
-function fetchAll(){
-    fetch("https://restcountries.com/v3.1/all")
-    .then(Blob => Blob.json())
-    .then(data => {
-        array = data;
-        render(array);
-    });
-};
 
-fetchAll();
+fetch("https://restcountries.com/v3.1/all")
+.then(Blob => Blob.json())
+.then(data => {
+    array = data;
+    render(array);
+});
+
 
 function render(arr) {
     arr.sort((a, b) => a.name.common.localeCompare(b.name.common));
@@ -223,6 +221,6 @@ selectedItem.addEventListener("change", ()=>{
             .then( blob => blob.json() )
             .then( data => render(data));
     }else{
-        fetchAll();
+        render(array);
     }
 });
