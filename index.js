@@ -90,7 +90,11 @@ function changeDomForBB(arr) {
     const html = `
             <div class="container">
                 <button class="back" onclick="back()">
-                    <img src="images/dark-arrow.svg" alt="" />Back
+                <svg class="arrow" fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                viewBox="0 0 476.213 476.213" xml:space="preserve">
+           <polygon points="476.213,223.107 57.427,223.107 151.82,128.713 130.607,107.5 0,238.106 130.607,368.714 151.82,347.5 
+               57.427,253.107 476.213,253.107 "/>
+           </svg>Back
                 </button>
             </div>
             <div class="info">
@@ -111,7 +115,7 @@ function changeDomForBB(arr) {
                         </div>
                         <div class="two">
                             <p>Top Level Domain: <span>${
-                                arr[0].tld[0]
+                                arr[0].tld?.[0]
                             }</span></p>
                             <p>Currencies: <span>${
                                 arr[0].currencies?.[
@@ -163,4 +167,44 @@ function chaFromList(name,region) {
             let arr = data.lenght > 1 ? data.filter((ele)=>ele.region == region) : data;
             changeDomForBB(arr);
         });
+}
+
+
+const mode = document.querySelector(".mode");
+mode.addEventListener("click",changeMode);
+
+function changeMode(){
+    const root = document.querySelector(":root");
+    const modeImg = document.querySelector(".mode img");
+    if(modeImg.src.includes("light.svg")){
+        localStorage.setItem("lightMode","dark");
+        modeImg.src = "images/dark.svg";
+        root.style.setProperty("--bg-color", "hsl(207, 26%, 17%)");
+        root.style.setProperty("--h-bg", "hsl(209, 23%, 22%)");
+        root.style.setProperty("--text", "hsl(0, 0%, 100%)");
+    }else {
+        localStorage.setItem("lightMode","light");
+        modeImg.src = "images/light.svg";
+        root.style.setProperty("--bg-color", "hsl(0, 0%, 98%)");
+        root.style.setProperty("--h-bg", "hsl(0, 0%, 100%)");
+        root.style.setProperty("--text", "hsl(200, 15%, 8%)");
+    }
+}
+
+if(!localStorage.getItem("lightMode")){
+    if(window.matchMedia('(prefers-color-scheme: dark)')){
+        document.querySelector(".mode img").src = "images/light.svg";
+        changeMode();
+    }else{
+        document.querySelector(".mode img").src = "images/dark.svg";
+        changeMode();
+    }
+}else{
+    if(localStorage.getItem("lightMode") == "dark"){
+        document.querySelector(".mode img").src = "images/light.svg";
+        changeMode();
+    }else{
+        document.querySelector(".mode img").src = "images/dark.svg";
+        changeMode();
+    }
 }

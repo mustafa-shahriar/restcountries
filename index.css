@@ -13,11 +13,10 @@
     --input: hsl(0, 0%, 52%);
     --shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
-/* body {
-    background: var(--bg-color);
-    width: 100vw;
-    min-height: 100vh;
-} */
+body{
+    background-color: var(--bg-color);
+}
+
 .wrapper {
     position: relative;
     overflow: hidden;
@@ -31,6 +30,7 @@ header {
     padding: 1rem;
     background-color: var(--h-bg);
     box-shadow: var(--shadow);
+    color: var(--text);
 }
 .container {
     max-width: 1200px;
@@ -85,13 +85,20 @@ main {
 .search input {
     outline: none;
     width: min(90vw, 350px);
+    background-color: var(--h-bg);
 }
 
 .select {
     background-color: var(--h-bg);
     box-shadow: var(--shadow);
-    padding: 0.7rem;
+    /* padding: 0.7rem; */
     border-radius: 0.2rem;
+}
+
+select#region {
+    background-color: var(--h-bg);
+    color: var(--text);
+    padding: 0.7rem;
     outline: none;
 }
 
@@ -158,9 +165,18 @@ main {
     border-right: none;
     color: var(--text);
     box-shadow: var(--shadow);
-    background-color: var(--bg-color);
+    background-color: var(--h-bg);
     cursor: pointer;
 }
+
+
+
+.arrow {
+    height: 15px;
+    width: 20px;
+    fill: var(--text);
+}
+
 
 .info {
     margin-top: 2.5rem;
@@ -212,7 +228,7 @@ main {
     padding: 0.3rem 1rem;
     margin-right: 1rem;
     margin-top: 1rem;
-    background-color: var(--bg-color);
+    background-color: var(--h-bg);
     color: var(--text);
     font-weight: 300;
     box-shadow: var(--shadow);
@@ -245,4 +261,5 @@ main {
 }
 .mt {
     margin-top: 1rem;
+    color: var(--input);
 }
