@@ -1,13 +1,18 @@
-const array = [];
+let array = [];
 let sx = 0;
 let sy = 0;
 const countries = document.querySelector(".countries");
-fetch("https://restcountries.com/v3.1/all")
+
+function fetchAll(){
+    fetch("https://restcountries.com/v3.1/all")
     .then(Blob => Blob.json())
     .then(data => {
-        array.push(...data);
+        array = data;
         render(array);
     });
+};
+
+fetchAll();
 
 function render(arr) {
     arr.sort((a, b) => a.name.common.localeCompare(b.name.common));
@@ -37,6 +42,7 @@ function render(arr) {
                     `;
     });
     countries.innerHTML = html;
+    document.querySelector("main").style.display = "block";
 }
 
 const search = document.querySelector(".search input");
@@ -208,3 +214,15 @@ if(!localStorage.getItem("lightMode")){
         changeMode();
     }
 }
+
+const selectedItem = document.querySelector("#region");
+selectedItem.addEventListener("change", ()=>{
+    if(selectedItem.value != "select"){
+        document.querySelector("main").style.display = "none";
+        fetch(`https://restcountries.com/v3.1/region/${selectedItem.value}`)
+            .then( blob => blob.json() )
+            .then( data => render(data));
+    }else{
+        fetchAll();
+    }
+});
