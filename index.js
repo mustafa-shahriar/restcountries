@@ -156,6 +156,11 @@ function back() {
 }
 
 function chaFromList(name,region) {
-    console.log(name);
-    console.log(region);
+    document.querySelector(".details").style.display = "none";
+    fetch(`https://restcountries.com/v3.1/alpha/${name}`)
+        .then(blob => blob.json())
+        .then(data => {
+            let arr = data.lenght > 1 ? data.filter((ele)=>ele.region == region) : data;
+            changeDomForBB(arr);
+        });
 }
