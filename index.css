@@ -86,6 +86,7 @@ main {
     outline: none;
     width: min(90vw, 350px);
     background-color: var(--h-bg);
+    color: var(--text);
 }
 
 .select {
