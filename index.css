@@ -14,7 +14,7 @@
     --shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 body{
-    background: var(--bg-color) url(images/loading-54-unscreen.gif) no-repeat center center;
+    background: var(--bg-color) url(images/loading-75-unscreen.gif) no-repeat center center;
     width: 100%;
     min-height: 100vh;
 }
