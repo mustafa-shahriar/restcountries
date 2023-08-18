@@ -4,4 +4,4 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 
 
-Live Site URL: [Add live site URL here](https://tangerine-centaur-39341c.netlify.app/)
+Live Site URL: [Add live site URL here](https://restcountriesoftheworld.netlify.app/)
