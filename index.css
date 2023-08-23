@@ -17,30 +17,6 @@ body{
     background-color: var(--bg-color);
 }
 
-/* .loader {
-    position: fixed;
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    border: 5px solid var(--input);
-    border-top-color: var(--text);
-    background-color: red;
-    z-index: 3;
-    left: calc(50% - 50px);
-    bottom: 50%;
-    transform: translatey(50%);
-    animation: rotate 1s infinite;
-    rota
-}
-
-@keyframes rotate {
-    100%{
-        rotate: 360deg;
-    }
-}
-
-*/
-
 .loader {
     height: 100px;
     width: 100px;
