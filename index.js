@@ -213,7 +213,7 @@ if (!localStorage.getItem("lightMode")) {
 
 const selectedItem = document.querySelector("#region");
 selectedItem.addEventListener("change", () => {
-  if (selectedItem.value != "select") {
+  if (selectedItem.value != "all") {
     document.querySelector("main").style.display = "none";
     fetch(`https://restcountries.com/v3.1/region/${selectedItem.value}`)
       .then((blob) => blob.json())
@@ -221,8 +221,4 @@ selectedItem.addEventListener("change", () => {
   } else {
     render(array);
   }
-});
-
-document.querySelector(".select").addEventListener("click", () => {
-  document.querySelector(".selectOption").innerHTML = "All";
 });
